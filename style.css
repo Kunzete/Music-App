@@ -284,8 +284,11 @@ nav ul li{
     }
     #gif{
         left: 0;
-        margin-left: 10px;
+        margin-left: 20px;
+        padding-top: 5px;
         padding-left: 0;
+        width: 45%;
+        height: 90%;
     }
     .songContainer i:hover{
         transform: scale(1.2);
