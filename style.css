@@ -356,6 +356,7 @@ nav ul li{
     .songContainer i{
         margin-left: 15%;
         font-size: 16px;
+        overflow-y: hidden;
     }
     .songContainer img{
         width: 25px;
