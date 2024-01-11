@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Spotify | Feel free to listen to your favourite songs</title>
+    <!-- Made By Mohtashim Khan -->
+    <!-- Copy Right -->
+</head>
+<body>
+    <nav>
+        <img src="./logo.png" alt="logo" width="40px"><span>Music App</span>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+        </ul>
+    </nav>
+
+    <div class="section">
+
+        <div class="songList">
+            <h2>Best Of Phonks - 2023</h2>
+
+            <div class="songContainer">
+                <img alt="1" width="50px"><span>Death is no more - BLESSED MANE </span>
+                <i id="0" class="fa-solid songPlay fa-circle-play"></i>
+            </div>
+            
+            <div class="songContainer">
+                <img alt="2" width="50px"><span>Death is no more - BLESSED MANE </span>
+                <i id="1" class="fa-solid songPlay fa-circle-play"></i>
+            </div>
+            
+            <div class="songContainer">
+                <img alt="3" width="50px"><span>Death is no more - BLESSED MANE </span>
+                <i id="2" class="fa-solid songPlay fa-circle-play"></i>
+            </div>
+            
+            <div class="songContainer">
+                <img alt="4" width="50px"><span>Death is no more - BLESSED MANE </span>
+                <i id="3" class="fa-solid songPlay fa-circle-play"></i>
+            </div>
+            
+            <div class="songContainer">
+                <img alt="5" width="50px"><span>Death is no more - BLESSED MANE </span>
+                <i id="4" class="fa-solid songPlay fa-circle-play"></i>
+            </div>
+            
+            <div class="songContainer">
+                <img alt="6" width="50px"><span>Death is no more - BLESSED MANE </span>
+                <i id="5" class="fa-solid songPlay fa-circle-play"></i>
+            </div>
+            
+            <div class="songContainer">
+                <img alt="7" width="50px"><span>Death is no more - BLESSED MANE </span>
+                <i id="6" class="fa-solid songPlay fa-circle-play"></i>
+            </div>
+            
+        </div>
+
+        <div class="gif">
+            <img src="./spectrum.gif" alt="gif" width="50%" id="gif">
+        </div>
+        
+    </div>
+    
+    <div class="bottom">
+
+        <input type="range" id="myProgressBar" value="0" step="1" min="0" max="100">
+
+        <div class="icon">
+            <!-- Icons -->
+            <i class="fa fa-backward-step" id="masterBackward"></i>
+            <i class="fa fa-play" id="masterPlay"></i>
+            <i class="fa fa-forward-step" id="masterForward"></i>
+        </div>
+
+        <div class="currentPlaying" id="Current">
+            <img class="img" alt="" width="60px"><span id="songName"> - </span>
+        </div>
+
+    </div>
+    
+    <script src="./app.js"></script>
+</body>
+</html>
