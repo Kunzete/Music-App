@@ -227,24 +227,25 @@ nav ul li{
         padding: 5px 0px;
     }
     .songContainer{
-        height: 5vh;
+        height: 6vh;
         width: 100%;
-        font-size: 65%;
+        font-size: 60%;
         text-align: start;
     }
     .songContainer span{
         width: 50%;
     }
     .songContainer i{
-        margin-left: 17%;
-        text-align: end;
+        margin-left: 15%;
     }
     .songContainer img{
         width: 25px;
-        margin: 5px 3.5px;
+        margin: 3px 3px;
     }
     .bottom{
         height: 12vh;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
     #myProgressBar{
         margin-top: 2%;
@@ -264,7 +265,7 @@ nav ul li{
         margin-top: 0;
     }
     .currentPlaying span{
-        font-size: 10px;
+        font-size: 9px;
         text-align: start;
         padding-left: 5px;
         width: 100%;
