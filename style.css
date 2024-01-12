@@ -34,6 +34,7 @@ nav span{
 
 nav img{
     margin-left: 10px;
+    filter: grayscale(100);
 }
 
 nav ul{

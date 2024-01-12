@@ -49,6 +49,7 @@ masterPlay.addEventListener("click", ()=>{
         masterSongImg[0].src = songs[songIndex].coverPath;
         masterSong.style.opacity = 1
         gif.style.opacity = 1;
+
         
     }else{
         audioElement.pause();
@@ -117,7 +118,6 @@ masterForward.addEventListener("click",(e)=>{
     masterPlay.classList.add("fa-pause");
     audioElement.currentTime = 0;
     audioElement.play()
-
 })
 
 masterBackward.addEventListener("click",()=>{
