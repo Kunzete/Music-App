@@ -12,6 +12,7 @@ let songItem = Array.from(document.getElementsByClassName("songContainer"));
 let masterSongName = document.getElementById("songName");
 let masterSongImg = document.getElementsByClassName("img");
 let masterSong = document.getElementById("Current");
+let Volume = document.getElementById("myVolumeBar");
 let songs = [
     {songName: "Moon Deity - Neon-Blade", filePath: "Songs/0.mp3", coverPath: "Cover/1.jpg"},
     {songName: "After dark x Sweeter Weather", filePath: "Songs/1.mp3", coverPath: "Cover/2.jpg"},
@@ -29,6 +30,7 @@ var makeAllPlays = ()=>{
         gif.style.opacity = 0
     })
 }
+
 
 songItem.forEach((element, i)=>{
     element.getElementsByTagName("img")[0].src = songs[i].coverPath;
@@ -58,6 +60,8 @@ masterPlay.addEventListener("click", ()=>{
         gif.style.opacity = 0
     }
 })  
+
+
 //Listen to events =>
 audioElement.addEventListener("timeupdate",()=>{
     //Update seekbar
@@ -65,6 +69,36 @@ audioElement.addEventListener("timeupdate",()=>{
     myProgressBar.value = progress;
 
 })
+
+//Volume Changer
+
+Volume.addEventListener("change",()=>{
+    audioElement.volume = Volume.value / 100;
+    if (Volume.value > 50) {
+        document.getElementById("volume-icon").classList.remove("fa-volume-xmark")
+        document.getElementById("volume-icon").classList.add("fa-volume-high")
+    }
+    else if (Volume.value < 50) {
+    document.getElementById("volume-icon").classList.remove("fa-volume-high")
+    document.getElementById("volume-icon").classList.add("fa-volume-low")
+    }
+    else if (Volume.value < 1) {
+        document.getElementById("volume-icon").classList.remove("fa-volume-high")
+        document.getElementById("volume-icon").classList.remove("fa-volume-low")
+        document.getElementById("volume-icon").classList.add("fa-volume-xmark")
+    }
+})
+
+//Muted or Unmuted
+document.getElementById("volume-icon").addEventListener("click", ()=>{
+    audioElement.muted = !audioElement.muted;
+    if (audioElement.muted) {
+        document.getElementById("volume-icon").classList.replace("fa-volume-high", "fa-volume-xmark")
+        document.getElementById("volume-icon").classList.replace("fa-volume-low", "fa-volume-xmark")
+    }else{
+        document.getElementById("volume-icon").classList.replace("fa-volume-xmark", "fa-volume-high")
+    }
+})  
 
 audioElement.addEventListener("ended",()=>{
     if (songIndex >= 6) {
