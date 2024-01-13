@@ -14,20 +14,24 @@ let masterSongImg = document.getElementsByClassName("img");
 let masterSong = document.getElementById("Current");
 let Volume = document.getElementById("myVolumeBar");
 let songs = [
-    {songName: "Moon Deity - Neon-Blade", filePath: "Songs/0.mp3", coverPath: "Cover/1.jpg"},
-    {songName: "After dark x Sweeter Weather", filePath: "Songs/1.mp3", coverPath: "Cover/2.jpg"},
-    {songName: "Life in rio - Phonk", filePath: "Songs/2.mp3", coverPath: "Cover/3.jpg"},
-    {songName: "Death is no more - Phonk", filePath: "Songs/3.mp3", coverPath: "Cover/4.jpg"},
-    {songName: "Murder in my mind - Kordhell", filePath: "Songs/4.mp3", coverPath: "Cover/5.jpg"},
-    {songName: "Poor Phonk", filePath: "Songs/5.mp3", coverPath: "Cover/6.jpg"},
-    {songName: "Tuca Donka - Phonk", filePath: "Songs/6.mp3", coverPath: "Cover/7.jpg"},
+    {songName: "Moon Deity - Neon-Blade", filePath: "Songs/0.mp3", coverPath: "Cover/0.jpg"},
+    {songName: "After dark x Sweeter Weather", filePath: "Songs/1.mp3", coverPath: "Cover/1.jpg"},
+    {songName: "Life in rio - Phonk", filePath: "Songs/2.mp3", coverPath: "Cover/2.jpg"},
+    {songName: "Death is no more - Phonk", filePath: "Songs/3.mp3", coverPath: "Cover/3.jpg"},
+    {songName: "Murder in my mind - Kordhell", filePath: "Songs/4.mp3", coverPath: "Cover/4.jpg"},
+    {songName: "Poor Phonk", filePath: "Songs/5.mp3", coverPath: "Cover/5.jpg"},
+    {songName: "Tuca Donka - Phonk", filePath: "Songs/6.mp3", coverPath: "Cover/6.jpg"},
+    {songName: "Sleepwalker - Phonk", filePath: "Songs/7.mp3", coverPath: "Cover/7.jpg"},
+    {songName: "Kerosene - Crystal Castle", filePath: "Songs/8.mp3", coverPath: "Cover/8.jpg"},
+    {songName: "Empathy - Crystal Castle", filePath: "Songs/9.mp3", coverPath: "Cover/9.jpg"},
+    {songName: "Lost down soul x Lost soul", filePath: "Songs/10.mp3", coverPath: "Cover/10.jpg"},
 ]
 
 var makeAllPlays = ()=>{
     Array.from(document.getElementsByClassName("songPlay")).forEach((element)=>{
         element.classList.remove("fa-pause-circle")
         element.classList.add("fa-play-circle")
-        gif.style.opacity = 0
+        gif.style.visibility = "visible"
     })
 }
 
@@ -50,14 +54,14 @@ masterPlay.addEventListener("click", ()=>{
         masterSongName.innerText = songs[songIndex].songName; 
         masterSongImg[0].src = songs[songIndex].coverPath;
         masterSong.style.opacity = 1
-        gif.style.opacity = 1;
+        gif.style.visibility = "visible"
 
         
     }else{
         audioElement.pause();
         masterPlay.classList.remove("fa-pause");
         masterPlay.classList.add("fa-play");
-        gif.style.opacity = 0
+        gif.style.visibility = "hidden"
     }
 })  
 
@@ -100,8 +104,9 @@ document.getElementById("volume-icon").addEventListener("click", ()=>{
     }
 })  
 
+//AutoPlay Next
 audioElement.addEventListener("ended",()=>{
-    if (songIndex >= 6) {
+    if (songIndex >= 9) {
         songIndex = 0;
     }else{
         songIndex += 1;
@@ -127,7 +132,7 @@ Array.from(document.getElementsByClassName("songPlay")).forEach((element)=>{
         e.target.classList.add("fa-pause-circle")
         masterSongName.innerText = songs[songIndex].songName;
         masterSongImg[0].src = songs[songIndex].coverPath;
-        gif.style.opacity = 1
+        gif.style.visibility = "visible"
         masterSong.style.opacity = 1
         masterPlay.classList.remove("fa-play");
         masterPlay.classList.add("fa-pause");
@@ -138,12 +143,12 @@ Array.from(document.getElementsByClassName("songPlay")).forEach((element)=>{
 })
 
 masterForward.addEventListener("click",(e)=>{
-    if (songIndex >= 6) {
+    if (songIndex >= 10) {
         songIndex = 0;
     }else{
         songIndex += 1;
     }
-    gif.style.opacity = 1
+    gif.style.visibility = "visible"
     masterSongName.innerText = songs[songIndex].songName;
     masterSongImg[0].src = songs[songIndex].coverPath;
     masterSong.style.opacity = 1
@@ -156,11 +161,11 @@ masterForward.addEventListener("click",(e)=>{
 
 masterBackward.addEventListener("click",()=>{
     if (songIndex <= 0) {
-        songIndex = 6;
+        songIndex = 10;
     }else{
         songIndex -= 1;
     }
-    gif.style.opacity = 1
+    gif.style.visibility = "visible"
     masterSongName.innerText = songs[songIndex].songName;
     masterSongImg[0].src = songs[songIndex].coverPath;
     masterSong.style.opacity = 1
