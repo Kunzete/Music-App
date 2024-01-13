@@ -507,6 +507,7 @@ nav ul li{
         text-align: center;
         overflow-y: hidden;
         margin: 5% 0px;
+        padding: 3px 0px;
     }
     .songContainer span{
         width: 65%;
