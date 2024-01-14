@@ -94,13 +94,14 @@ nav ul li{
     transition: 0.2s steps(50);
     position: relative;
     margin: 1% 0px;
+    height: 12%;
 }
 
 .songContainer img{
     width: 11%;
     border-radius: 50px;
     margin: 5px 5px;
-    transition: 0.15s ease-in-out;
+    transition: all 0.5s ease;
 }
 
 .songContainer span{
@@ -211,7 +212,9 @@ nav ul li{
 }
 
 .songContainer img:hover{
-    transform: scale(3);
+    transform: scale(2);
+    width: 18%;
+    clip-path: polygon(0 0, 100% 0, 62% 100%, 0% 100%);
     padding-left: 2%;
 }
 
