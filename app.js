@@ -80,13 +80,15 @@ Volume.addEventListener("change",()=>{
     audioElement.volume = Volume.value / 100;
     if (Volume.value > 50) {
         document.getElementById("volume-icon").classList.remove("fa-volume-xmark")
+        document.getElementById("volume-icon").classList.remove("fa-volume-low")
         document.getElementById("volume-icon").classList.add("fa-volume-high")
     }
     else if (Volume.value < 50) {
     document.getElementById("volume-icon").classList.remove("fa-volume-high")
+    document.getElementById("volume-icon").classList.remove("fa-volume-xmark")
     document.getElementById("volume-icon").classList.add("fa-volume-low")
     }
-    else if (Volume.value < 1) {
+    else if (Volume.value <= 0) {
         document.getElementById("volume-icon").classList.remove("fa-volume-high")
         document.getElementById("volume-icon").classList.remove("fa-volume-low")
         document.getElementById("volume-icon").classList.add("fa-volume-xmark")
