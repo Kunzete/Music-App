@@ -77,18 +77,18 @@ audioElement.addEventListener("timeupdate",()=>{
 //Volume Changer
 
 Volume.addEventListener("change",()=>{
-    audioElement.volume = Volume.value / 100;
-    if (audioElement.volume >= 50) {
+    audioVolume = Volume.value / 100;
+    if ( audioVolume >= 50) {
         document.getElementById("volume-icon").classList.remove("fa-volume-xmark")
         document.getElementById("volume-icon").classList.remove("fa-volume-low")
         document.getElementById("volume-icon").classList.add("fa-volume-high")
     }
-    else if (audioElement.volume <= 50) {
+    else if (audioVolume <= 50) {
     document.getElementById("volume-icon").classList.remove("fa-volume-high")
     document.getElementById("volume-icon").classList.remove("fa-volume-xmark")
     document.getElementById("volume-icon").classList.add("fa-volume-low")
     }
-    else if (audioElement.volume <= 0) {
+    else if (audioVolume = 0) {
         document.getElementById("volume-icon").classList.remove("fa-volume-high")
         document.getElementById("volume-icon").classList.remove("fa-volume-low")
         document.getElementById("volume-icon").classList.add("fa-volume-xmark")
