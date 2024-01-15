@@ -83,7 +83,7 @@ Volume.addEventListener("change",()=>{
         document.getElementById("volume-icon").classList.remove("fa-volume-low")
         document.getElementById("volume-icon").classList.add("fa-volume-high")
     }
-    else if (Volume.value < 50) {
+    else if (Volume.value > 0) {
     document.getElementById("volume-icon").classList.remove("fa-volume-high")
     document.getElementById("volume-icon").classList.remove("fa-volume-xmark")
     document.getElementById("volume-icon").classList.add("fa-volume-low")
