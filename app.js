@@ -86,7 +86,7 @@ Volume.addEventListener("change",()=>{
     document.getElementById("volume-icon").classList.remove("fa-volume-high")
     document.getElementById("volume-icon").classList.add("fa-volume-low")
     }
-    else if (Volume.value < 1) {
+    else if (audioElement.muted) {
         document.getElementById("volume-icon").classList.remove("fa-volume-high")
         document.getElementById("volume-icon").classList.remove("fa-volume-low")
         document.getElementById("volume-icon").classList.add("fa-volume-xmark")
