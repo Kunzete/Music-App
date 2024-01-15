@@ -89,6 +89,7 @@ Volume.addEventListener("change",()=>{
     document.getElementById("volume-icon").classList.add("fa-volume-low")
     }
     else if (Volume.value <= 0) {
+        audioElement.muted
         document.getElementById("volume-icon").classList.remove("fa-volume-high")
         document.getElementById("volume-icon").classList.remove("fa-volume-low")
         document.getElementById("volume-icon").classList.add("fa-volume-xmark")
@@ -99,9 +100,13 @@ Volume.addEventListener("change",()=>{
 document.getElementById("volume-icon").addEventListener("click", ()=>{
     audioElement.muted = !audioElement.muted;
     if (audioElement.muted) {
+        audioElement.volume = parseInt(0)
+        Volume.value = parseInt(0)
         document.getElementById("volume-icon").classList.replace("fa-volume-high", "fa-volume-xmark")
         document.getElementById("volume-icon").classList.replace("fa-volume-low", "fa-volume-xmark")
     }else{
+        audioElement.volume = parseInt(1)
+        Volume.value = parseInt(100)
         document.getElementById("volume-icon").classList.replace("fa-volume-xmark", "fa-volume-high")
     }
 })  
