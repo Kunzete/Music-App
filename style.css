@@ -12,8 +12,7 @@
 }
 
 body{
-    background: rgb(155,255,161);
-    background: linear-gradient(351deg, rgb(25, 146, 33) 25%, rgba(0,144,219,1) 100%);
+    background: #131313;
     font-size: 16px;
     font-family: 'Varela Round', sans-serif;
 }
