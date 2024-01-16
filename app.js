@@ -13,6 +13,7 @@ let masterSongName = document.getElementById("songName");
 let masterSongImg = document.getElementsByClassName("img");
 let masterSong = document.getElementById("Current");
 let Volume = document.getElementById("myVolumeBar");
+let LoopButton = document.getElementById("LoopButton");
 let songs = [
     {songName: "Moon Deity - Neon-Blade", filePath: "Songs/0.mp3", coverPath: "Cover/0.jpg"},
     {songName: "After dark x Sweeter Weather", filePath: "Songs/1.mp3", coverPath: "Cover/1.jpg"},
@@ -181,4 +182,93 @@ masterBackward.addEventListener("click",()=>{
     audioElement.src = `Songs/${songIndex}.mp3`;
     audioElement.currentTime = 0;
     audioElement.play()
+})
+
+//Creating Loop
+LoopButton.addEventListener("click",()=>{
+    audioElement.loop = !audioElement.loop
+    if (audioElement.loop) {
+        document.getElementById("LoopButton").src = `loopOne.svg`;
+        LoopButton.style.filter = "invert(86%) sepia(62%) saturate(521%) hue-rotate(61deg) brightness(105%) contrast(129%)"
+        audioElement.loop = true;
+    }else{
+        audioElement.loop = false;
+        LoopButton.style.filter = "invert(1)"
+        document.getElementById("LoopButton").src = `loopDefault.svg`
+    }
+})
+
+//Making Keybindings 
+
+//Play,Pause
+window.addEventListener("keypress", (space)=>{
+    if (space.code === 'Space') {
+        if(audioElement.paused || audioElement.currentTime<=0){
+            audioElement.play();
+            masterPlay.classList.remove("fa-play");
+            masterPlay.classList.add("fa-pause");
+            masterSongName.innerText = songs[songIndex].songName; 
+            masterSongImg[0].src = songs[songIndex].coverPath;
+            masterSong.style.opacity = 1
+            gif.style.visibility = "visible"
+        }else{
+            audioElement.pause();
+            masterPlay.classList.remove("fa-pause");
+            masterPlay.classList.add("fa-play");
+            gif.style.visibility = "hidden"
+        }
+    }
+})  
+
+
+//Next Song
+window.addEventListener("keypress",(next)=>{
+    if (next.key === "Shift" + "ArrowRight") {
+        if (songIndex >= 10) {
+            songIndex = 0;
+        }else{
+            songIndex += 1;
+        }
+        gif.style.visibility = "visible"
+        masterSongName.innerText = songs[songIndex].songName;
+        masterSongImg[0].src = songs[songIndex].coverPath;
+        masterSong.style.opacity = 1
+        audioElement.src = `Songs/${songIndex}.mp3`;
+        masterPlay.classList.remove("fa-play");
+        masterPlay.classList.add("fa-pause");
+        audioElement.currentTime = 0;
+        audioElement.play()
+    }
+})
+
+//Mute
+window.addEventListener("keypress", (e)=>{
+    if (e.key === 'm') {
+        audioElement.muted = !audioElement.muted;
+        if (audioElement.muted) {
+            audioElement.volume = parseInt(0)
+            Volume.value = parseInt(0)
+            document.getElementById("volume-icon").classList.replace("fa-volume-high", "fa-volume-xmark")
+            document.getElementById("volume-icon").classList.replace("fa-volume-low", "fa-volume-xmark")
+        }else{
+            audioElement.volume = parseInt(1)
+            Volume.value = parseInt(100)
+            document.getElementById("volume-icon").classList.replace("fa-volume-xmark", "fa-volume-high")
+        }
+    
+    }
+}) 
+
+//Loop
+window.addEventListener("keypress", (L)=>{
+    if (L.key === "l") {
+        audioElement.loop = !audioElement.loop
+        if (audioElement.loop) {
+            document.getElementById("LoopButton").src = `loopOne.svg`;
+            LoopButton.style.filter = "invert(86%) sepia(62%) saturate(521%) hue-rotate(61deg) brightness(105%) contrast(129%)"
+        }else{
+            LoopButton.style.filter = "invert(1)"
+            document.getElementById("LoopButton").src = `loopDefault.svg`
+        }
+    }
 })

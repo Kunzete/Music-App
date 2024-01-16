@@ -116,7 +116,7 @@ nav ul li{
 .songContainer img{
     width: 11%;
     border-radius: 50px;
-    margin: 5px 5px;
+    margin: 5px 3px;
     transition: all 0.5s ease;
 }
 
@@ -169,6 +169,10 @@ nav ul li{
     padding: 0px 10px;
     margin-top: 20px;
     cursor: pointer;
+}
+
+.icon img{
+    width: 24px;
 }
 
 #myProgressBar{
@@ -239,8 +243,9 @@ nav ul li{
     font-size: 18px;
 }
 
+
 /* Done */
-@media only screen and (max-width: 768px) and (max-height: 800px) { 
+@media only screen and (max-width: 768px) and (min-height: 400px) and (max-height: 800px) { 
     *{
         overflow-x: hidden;
     }
@@ -307,9 +312,8 @@ nav ul li{
     .icon i{
         overflow: hidden;
         font-size: 24px;
-        padding-top:5;
         overflow-y: hidden;
-        margin-top: 15%;
+        margin-top: 10%;
     }
     .currentPlaying{
         width: 30%;
@@ -367,7 +371,7 @@ nav ul li{
 }
 
 /* Done */
-@media only screen and (max-width: 600px) and (min-height: 400px) and (max-height: 800px) {
+@media only screen and (max-width: 600px) and (min-height: 600px) and (max-height: 800px) {
     *{
         overflow-x: hidden;
     }
@@ -552,11 +556,15 @@ nav ul li{
         width: 85%;
     }
     .icon i{
-        font-size: 20px;
+        font-size: 18px;
         padding-top: 0;
-        margin-top:5%;
+        margin-top:10%;
         overflow-y: hidden;
     }
+    .icon img{
+        width: 18px;
+    }
+    
     .currentPlaying{
         width: 30%;
         height: 70%;
@@ -794,25 +802,26 @@ nav ul li{
         overflow-y: hidden;
     }
     #myProgressBar{
-        margin-top: 2%;
+        margin-top: 0.5%;
+        margin-bottom: 0.5%;
         width: 85%;
     }
     .icon i{
-        font-size: 16px;
+        font-size: 13px;
         padding-top: 0;
         margin-top: 5%;
         overflow-y: hidden;
     }
     .currentPlaying{
-        width: 28%;
-        height: 70%;
+        width: 25%;
+        height: 40%;
         margin-left: 0;
         padding-left: 0;
         padding-top: 0;
-        margin-top: 0;
+        margin-top: 0.5%;
     }
     .currentPlaying span{
-        font-size: 10px;
+        font-size: 8px;
         text-align: start;
         padding-left: 5px;
         width: 100%;
@@ -925,12 +934,16 @@ nav ul li{
     }
     .icon i{
         overflow-y: hidden;
-        text-align: center;
-        font-size: 265;
-        overflow-y: hidden;
+        text-align: start;
+        font-size: 32px;
         padding-top: 0;
-        margin-top: 25%;
-        height: 100%;
+        margin-top: 20%;
+    }
+    .icon img{
+        margin-top: 0;
+        padding-top: 0;
+        padding-left: 5px;
+        width: 32px;
     }
     .currentPlaying{
         width: 28%;
