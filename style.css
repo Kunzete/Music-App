@@ -12,8 +12,8 @@
 }
 
 body{
-    background: rgb(0,7,35);
-    background: linear-gradient(351deg, rgba(0,7,35,1) 27%, rgba(0,144,219,1) 100%);
+    background: rgb(155,255,161);
+    background: linear-gradient(351deg, rgb(25, 146, 33) 25%, rgba(0,144,219,1) 100%);
     font-size: 16px;
     font-family: 'Varela Round', sans-serif;
 }
@@ -93,7 +93,7 @@ nav ul li{
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0;
-  background: #10ff9f;
+  background: #1088ff;
 }
 
 .songContainer{
@@ -179,6 +179,7 @@ nav ul li{
     width: 85vw;
     transition: all 0.4s ease-out;
     cursor: pointer;
+    height: 2vh;
 }
 
 #myVolumeBar{
