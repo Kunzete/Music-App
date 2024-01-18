@@ -194,8 +194,8 @@ LoopButton.addEventListener("click",()=>{
         audioElement.loop = true;
     }else{
         audioElement.loop = false;
-        LoopButton.style.filter = "invert(1)"
         document.getElementById("LoopButton").src = `loopDefault.svg`
+        LoopButton.style.filter = "invert(1)"
     }
 })
 

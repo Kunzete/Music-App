@@ -92,12 +92,12 @@ nav ul li{
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0;
-  background: #1088ff;
+  background: rgb(50, 50, 50)
 }
 
 .songContainer{
-    background: rgb(0,14,70);
-    background: linear-gradient(351deg, rgba(0,14,70,1) 0%, rgba(0,144,219,1) 100%);
+    background: rgba(255, 255, 255, 0.106);
+    backdrop-filter: blur(3px);
     width: 40%;
     display: flex;
     align-items: center;
@@ -166,9 +166,12 @@ nav ul li{
 
 .bottom i{
     font-size: 26px;
-    padding: 0px 10px;
-    margin-top: 20px;
     cursor: pointer;
+    padding: 0px 10px;
+}
+
+.icon{
+    margin-top: 2%;
 }
 
 .icon img{
@@ -184,10 +187,11 @@ nav ul li{
 }
 
 #myProgressBar::-webkit-slider-runnable-track{
-    height: 5px;
+    height: 0.7vh;
     -webkit-appearance: none;
-    color: #009152;
+    color: #00ff91;
     margin-top: -1px;
+    border-radius: 50px;
 }
 
 #myProgressBar::-webkit-slider-thumb{
@@ -195,8 +199,7 @@ nav ul li{
     -webkit-appearance: none;
     height: 50px;
     cursor: pointer;
-    background: #009152;
-    box-shadow: -1140px 0px 0px 1140px #009152;
+    box-shadow: -1140px 0px 0px 1140px rgb(72, 72, 72)
 }
 
 #myVolumeBar{
@@ -696,13 +699,16 @@ nav ul li{
         overflow-y: hidden;
     }
     #myProgressBar{
-        margin-top: 2%;
+        margin-top: 1.5%;
+        margin-bottom: 1.5%;
         width: 85%;
     }
-    .icon i{
-        font-size: 22px;
+    .icon{
         padding-top: 0;
-        margin-top:5%;
+        margin-top: 1%;
+    }
+    .icon i{
+        font-size: 16px;
         overflow-y: hidden;
     }
     .currentPlaying{
@@ -820,15 +826,21 @@ nav ul li{
         overflow-y: hidden;
     }
     #myProgressBar{
-        margin-top: 0.5%;
-        margin-bottom: 0.5%;
+        margin-top: 1.5%;
+        margin-bottom: 1.5%;
         width: 85%;
+    }
+    .icon{
+        padding-top: 0;
+        margin-top: 2%;
     }
     .icon i{
         font-size: 13px;
-        padding-top: 0;
-        margin-top: 5%;
         overflow-y: hidden;
+    }
+    #LoopButton{
+        padding-top: 2px;
+        width: 16px;
     }
     .currentPlaying{
         width: 25%;
