@@ -179,6 +179,7 @@ nav ul li{
     overflow: hidden;
     width: 85%;
     -webkit-appearance: none;
+    appearance: none;
     background-color: #ffffff;
     border-radius: 50px;
 }
