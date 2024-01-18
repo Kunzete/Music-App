@@ -28,7 +28,7 @@ let songs = [
     {songName: "Lost down soul x Lost soul", filePath: "Songs/10.mp3", coverPath: "Cover/10.jpg"},
 ]
 
-var makeAllPlays = ()=>{
+const makeAllPlays = ()=>{
     Array.from(document.getElementsByClassName("songPlay")).forEach((element)=>{
         element.classList.remove("fa-pause-circle")
         element.classList.add("fa-play-circle")
@@ -127,6 +127,7 @@ audioElement.addEventListener("ended",()=>{
     audioElement.play()
 })
 
+//Change Duration
 myProgressBar.addEventListener("change",()=>{
     audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
 })
@@ -198,7 +199,7 @@ LoopButton.addEventListener("click",()=>{
     }
 })
 
-//Making Keybindings 
+//Making Keybindings===>
 
 //Play,Pause
 window.addEventListener("keypress", (space)=>{
@@ -219,27 +220,6 @@ window.addEventListener("keypress", (space)=>{
         }
     }
 })  
-
-
-//Next Song
-window.addEventListener("keypress",(next)=>{
-    if (next.key === "Shift" + "ArrowRight") {
-        if (songIndex >= 10) {
-            songIndex = 0;
-        }else{
-            songIndex += 1;
-        }
-        gif.style.visibility = "visible"
-        masterSongName.innerText = songs[songIndex].songName;
-        masterSongImg[0].src = songs[songIndex].coverPath;
-        masterSong.style.opacity = 1
-        audioElement.src = `Songs/${songIndex}.mp3`;
-        masterPlay.classList.remove("fa-play");
-        masterPlay.classList.add("fa-pause");
-        audioElement.currentTime = 0;
-        audioElement.play()
-    }
-})
 
 //Mute
 window.addEventListener("keypress", (e)=>{
